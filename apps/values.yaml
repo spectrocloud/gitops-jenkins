@@ -1,0 +1,4 @@
+spec:
+  nfs:
+    # Specify size for NFS server max
+    size: 6Gi
