@@ -16,7 +16,7 @@ spec:
     repoURL: 'https://github.com/spectrocloud/gitops-jenkins.git'
     targetRevision: HEAD
     helm:
-      valueFiles: ['values-jenkins.yaml']
+      valueFiles: ['../../teams/team2/values-jenkins.yaml']
   project: default
   syncPolicy:
     automated:
