@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vault-team3
+  name: team3
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: in-cluster
-    namespace: team3
+    namespace: argocd
   source:
-    path: components/vault
+    path: teams/team3
     repoURL: 'https://github.com/spectrocloud/gitops-jenkins.git'
     targetRevision: HEAD
   project: default
@@ -20,5 +20,5 @@ spec:
     automated:
       prune: true
       #selfHeal: false
-    syncOptions:
-    - CreateNamespace=true
+    # syncOptions:
+    # - CreateNamespace=true
