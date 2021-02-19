@@ -11,6 +11,8 @@ metadata:
     app.kubernetes.io/name: {{ include "vault.name" . }}-agent-injector
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 webhooks:
   - name: vault.hashicorp.com
     sideEffects: None
