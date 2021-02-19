@@ -349,7 +349,7 @@ controller:
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
     # configures the hostname e.g. jenkins.example.com
-    hostName: jenkins-team2.cluster1.discovery.spectrocloud.com
+    hostName: jenkins-team3.cluster1.discovery.spectrocloud.com
     tls:
     # - secretName: jenkins.cluster.local
     #   hosts:
