@@ -1,0 +1,2579 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1624,
+  "iteration": 1613070683553,
+  "links": [],
+  "panels": [
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "displayMode": "auto",
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Finished"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 130
+              },
+              {
+                "id": "unit",
+                "value": "dateTimeFromNow"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Duration"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "ms"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "lcd-gauge"
+              },
+              {
+                "id": "max",
+                "value": 3600000
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 1800000
+                    },
+                    {
+                      "color": "red",
+                      "value": 2700000
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "#"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 50
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": true,
+                    "title": "Show build",
+                    "url": "https://${jenkins_host}/job/${__data.fields.org_name}/job/${__data.fields.service_name}/job/${__data.fields.branch_name}/${__data.fields.build_number}/"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Result"
+            },
+            "properties": [
+              {
+                "id": "custom.filterable",
+                "value": true
+              },
+              {
+                "id": "custom.width",
+                "value": 80
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 1,
+                    "text": "Success",
+                    "to": "",
+                    "type": 1,
+                    "value": "0"
+                  },
+                  {
+                    "from": "",
+                    "id": 2,
+                    "text": "Failed",
+                    "to": "",
+                    "type": 1,
+                    "value": "2"
+                  },
+                  {
+                    "from": "",
+                    "id": 3,
+                    "text": "Aborted",
+                    "to": "",
+                    "type": 1,
+                    "value": "4"
+                  },
+                  {
+                    "from": "",
+                    "id": 4,
+                    "text": "Unknown",
+                    "to": "",
+                    "type": 1,
+                    "value": "5"
+                  }
+                ]
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 2
+                    },
+                    {
+                      "color": "semi-dark-orange",
+                      "value": 4
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Branch"
+            },
+            "properties": [
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": false,
+                    "title": "Drilldown",
+                    "url": "/dashboard/db/xpl-pipeline-branches?var-branch=${__data.fields.Branch}"
+                  }
+                ]
+              },
+              {
+                "id": "custom.filterable",
+                "value": true
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Tests"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 100
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Repository"
+            },
+            "properties": [
+              {
+                "id": "custom.filterable",
+                "value": true
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Org"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": null
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Deployment"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 1,
+                    "text": "Success",
+                    "to": "",
+                    "type": 1,
+                    "value": "0"
+                  },
+                  {
+                    "from": "1",
+                    "id": 2,
+                    "text": "Failed",
+                    "to": "6",
+                    "type": 2,
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Finished"
+          }
+        ]
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"build_number\", \"org_name\", \"service_name\", \"branch_name\", \"build_result_ordinal\", \"build_time\", \"tests_total\" FROM \"jenkins_data\" WHERE $timeFilter AND \"jenkins_host\" =~ /^$jenkins_host$/ AND build_result <> '?' AND branch_name !~ /.*-release-\\d.*/ ORDER BY time DESC",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_result"
+                ],
+                "type": "field"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"deploy_status_devcicd_ordinal\" FROM \"jenkins_custom_data\" WHERE $timeFilter AND \"jenkins_host\" =~ /^$jenkins_host$/ ORDER BY time DESC",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Lastest builds",
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "Time"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "jenkins_host": true,
+              "org": true,
+              "org_name": false
+            },
+            "indexByName": {
+              "Time": 0,
+              "branch_name": 4,
+              "build_number": 1,
+              "build_result_ordinal": 5,
+              "build_time": 6,
+              "org_name": 2,
+              "service_name": 3,
+              "tests_total": 7
+            },
+            "renameByName": {
+              "Time": "Finished",
+              "branch_name": "Branch",
+              "build_number": "#",
+              "build_result": "Result",
+              "build_result_ordinal": "Result",
+              "build_time": "Duration",
+              "deploy_status_devcicd_ordinal": "Deployment",
+              "jobname": "",
+              "org_name": "Org",
+              "project_path": "Branch",
+              "service_name": "Repository",
+              "tests_total": "Tests"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "Total builds in the selected time filter.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 10
+      },
+      "hideTimeOverride": false,
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$col",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT COUNT(\"build_number\") FROM \"jenkins_data\" WHERE $timeFilter AND \"jenkins_host\" =~ /^$jenkins_host$/",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "project_path"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "Path"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total builds",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "Only successful builds are used to calculate the average build duration",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "displayMode": "auto",
+            "filterable": false
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1800000
+              },
+              {
+                "color": "red",
+                "value": 2700000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Duration"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "lcd-gauge"
+              },
+              {
+                "id": "unit",
+                "value": "ms"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Health"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 80
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 60
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 80
+                    },
+                    {
+                      "color": "green",
+                      "value": 100
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 10,
+        "x": 3,
+        "y": 10
+      },
+      "hideTimeOverride": false,
+      "id": 18,
+      "options": {
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Duration"
+          }
+        ]
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$col",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"build_time\") AS \"Duration\" FROM \"jenkins_data\" WHERE (\"build_result\" = 'SUCCESS' AND \"project_path\" =~ /.*\\/dev$/ AND \"jenkins_host\" =~ /^$jenkins_host$/) AND $timeFilter GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "build_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "Duration"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "build_result",
+              "operator": "=",
+              "value": "SUCCESS"
+            },
+            {
+              "condition": "AND",
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/(dev|develop)$/"
+            },
+            {
+              "condition": "AND",
+              "key": "jenkins_host",
+              "operator": "=~",
+              "value": "/^$jenkins_host$/"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "project_build_health"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "Health"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/(dev|develop)$/"
+            },
+            {
+              "condition": "AND",
+              "key": "jenkins_host",
+              "operator": "=~",
+              "value": "/^$jenkins_host$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Average build duration per service (DEV branch only)",
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "project_path"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Time 1": true,
+              "Time 2": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "Path": "",
+              "project_path": "Branch"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "How often an organization successfully releases to prod",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Successful Deployements"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "basic"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": null
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 1
+                    },
+                    {
+                      "color": "green",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 11,
+        "x": 13,
+        "y": 10
+      },
+      "hideTimeOverride": false,
+      "id": 31,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "service_name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "branch_name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "jenkins_custom_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "deploy_status_devcicd_ordinal"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              },
+              {
+                "params": [
+                  "Successful Deployements"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "jenkins_host",
+              "operator": "=~",
+              "value": "/^$jenkins_host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "deploy_status_devcicd",
+              "operator": "=",
+              "value": "SUCCESS"
+            }
+          ]
+        }
+      ],
+      "timeFrom": "7d",
+      "timeShift": null,
+      "title": "Deployment Frequency",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true
+            },
+            "indexByName": {
+              "Successful Deployements": 3,
+              "Time": 0,
+              "branch_name": 2,
+              "service_name": 1
+            },
+            "renameByName": {
+              "branch_name": "Branch",
+              "count": "",
+              "deploy_status_devcicd_ordinal": "devcicd",
+              "devcicd": "Deployements",
+              "service_name": "Service"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "Uniques branches built in the selected time filter.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 13
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$col",
+          "groupBy": [],
+          "measurement": "jenkins_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT COUNT(DISTINCT \"project_path\") AS \"Path\" FROM \"jenkins_data\" WHERE $timeFilter AND \"jenkins_host\" =~ /^$jenkins_host$/",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "project_path"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "Path"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Uniques branches built",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "id": 12,
+      "panels": [],
+      "title": "SonarQube (DEV branch only)",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(106, 59, 184)",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 20
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"lines_of_code\") FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "lines_of_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total lines of code",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(106, 59, 184)",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 3,
+        "y": 20
+      },
+      "id": 15,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"vulnerabilities\") FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "vulnerabilities"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current vulnerabilities",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(106, 59, 184)",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 20
+      },
+      "id": 16,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"bugs\") FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "bugs"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current bugs",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(106, 59, 184)",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 9,
+        "y": 20
+      },
+      "id": 22,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"code_smells\") FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "code_smells"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current code smells",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(106, 59, 184)",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 12,
+        "y": 20
+      },
+      "id": 17,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.2.2",
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"critical_issues\") FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "critical_issues"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current critical issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "sum"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "displayMode": "auto",
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byType",
+              "options": "number"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-background"
+              },
+              {
+                "id": "custom.width",
+                "value": 100
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "rgb(102, 102, 102)",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 23
+      },
+      "id": 28,
+      "maxPerRow": 2,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "project_path"
+          }
+        ]
+      },
+      "pluginVersion": "7.2.2",
+      "repeat": "diff_interval",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "diff_interval": {
+          "selected": false,
+          "text": "24h",
+          "value": "24h"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"code_smells\") as \"code_smells_now\", last(\"vulnerabilities\") as \"vulnerabilities_now\", last(\"bugs\") as \"bugs_now\", last(\"critical_issues\") as \"critical_issues_now\" FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "lines_of_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"code_smells\") as \"code_smells_previous\", last(\"vulnerabilities\") as \"vulnerabilities_previous\", last(\"bugs\") as \"bugs_previous\", last(\"critical_issues\") as \"critical_issues_previous\" FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() - $diff_interval GROUP BY \"project_path\"",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "New issues in the last $diff_interval",
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "project_path"
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "code_smells_diff",
+            "binary": {
+              "left": "code_smells_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "code_smells_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "vulnerabilities_diff",
+            "binary": {
+              "left": "vulnerabilities_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "vulnerabilities_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "bugs_diff",
+            "binary": {
+              "left": "bugs_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "bugs_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "critical_issues_diff",
+            "binary": {
+              "left": "critical_issues_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "critical_issues_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Time 1": true,
+              "Time 2": true,
+              "bugs_now": true,
+              "bugs_now 1": true,
+              "bugs_previous": true,
+              "code_smells_now": true,
+              "code_smells_previous": true,
+              "critical_issues_diff": false,
+              "critical_issues_now": true,
+              "critical_issues_previous": true,
+              "lines_of_code_now": true,
+              "lines_of_code_previous": true,
+              "now": true,
+              "previous": true,
+              "vulnerabilities_now": true,
+              "vulnerabilities_previous": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "bugs_diff": "Bugs",
+              "code_smells_diff": "Code smells",
+              "code_smells_difference": "Code smells",
+              "critical_issues_diff": "Critical",
+              "difference": "Code smells",
+              "lines_of_code_diff": "Lines of code",
+              "project_path": "Branch",
+              "vulnerabilities_diff": "Vuln."
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": "$datasource",
+      "description": "On dev branches only",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "displayMode": "auto",
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(1, 35, 87)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byType",
+              "options": "number"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-background"
+              },
+              {
+                "id": "custom.width",
+                "value": 100
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "rgb(102, 102, 102)",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 23
+      },
+      "id": 32,
+      "maxPerRow": 2,
+      "options": {
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "project_path"
+          }
+        ]
+      },
+      "pluginVersion": "7.2.2",
+      "repeatDirection": "h",
+      "repeatIteration": 1613070683553,
+      "repeatPanelId": 28,
+      "scopedVars": {
+        "diff_interval": {
+          "selected": false,
+          "text": "7d",
+          "value": "7d"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"code_smells\") as \"code_smells_now\", last(\"vulnerabilities\") as \"vulnerabilities_now\", last(\"bugs\") as \"bugs_now\", last(\"critical_issues\") as \"critical_issues_now\" FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() GROUP BY \"project_path\"",
+          "queryType": "randomWalk",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "lines_of_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "project_path",
+              "operator": "=~",
+              "value": "/.*\\/dev$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"code_smells\") as \"code_smells_previous\", last(\"vulnerabilities\") as \"vulnerabilities_previous\", last(\"bugs\") as \"bugs_previous\", last(\"critical_issues\") as \"critical_issues_previous\" FROM \"sonarqube_data\" WHERE (\"jenkins_host\" =~ /^$jenkins_host$/ AND \"project_path\" =~ /.*\\/(dev|develop)$/) AND time <= now() - $diff_interval GROUP BY \"project_path\"",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "New issues in the last $diff_interval",
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "project_path"
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "code_smells_diff",
+            "binary": {
+              "left": "code_smells_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "code_smells_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "vulnerabilities_diff",
+            "binary": {
+              "left": "vulnerabilities_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "vulnerabilities_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "bugs_diff",
+            "binary": {
+              "left": "bugs_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "bugs_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "critical_issues_diff",
+            "binary": {
+              "left": "critical_issues_now",
+              "operator": "-",
+              "reducer": "sum",
+              "right": "critical_issues_previous"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Time 1": true,
+              "Time 2": true,
+              "bugs_now": true,
+              "bugs_now 1": true,
+              "bugs_previous": true,
+              "code_smells_now": true,
+              "code_smells_previous": true,
+              "critical_issues_diff": false,
+              "critical_issues_now": true,
+              "critical_issues_previous": true,
+              "lines_of_code_now": true,
+              "lines_of_code_previous": true,
+              "now": true,
+              "previous": true,
+              "vulnerabilities_now": true,
+              "vulnerabilities_previous": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "bugs_diff": "Bugs",
+              "code_smells_diff": "Code smells",
+              "code_smells_difference": "Code smells",
+              "critical_issues_diff": "Critical",
+              "difference": "Code smells",
+              "lines_of_code_diff": "Lines of code",
+              "project_path": "Branch",
+              "vulnerabilities_diff": "Vuln."
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$datasource",
+      "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 32
+      },
+      "hiddenSeries": false,
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.2.2",
+      "pointradius": 3,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "lines_of_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "jenkins_host",
+              "operator": "=~",
+              "value": "/^$jenkins_host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Lines of code over time",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "$datasource",
+      "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 32
+      },
+      "hiddenSeries": false,
+      "id": 21,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.2.2",
+      "pointradius": 3,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_project_path",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "project_path"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "sonarqube_data",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "queryType": "randomWalk",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "critical_issues"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "jenkins_host",
+              "operator": "=~",
+              "value": "/^$jenkins_host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Critical issues over time",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 39
+      },
+      "id": 20,
+      "panels": [],
+      "title": "JaCoCo",
+      "type": "row"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "error": null,
+        "hide": 2,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "diff_interval",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "24h",
+            "value": "24h"
+          },
+          {
+            "selected": false,
+            "text": "7d",
+            "value": "7d"
+          }
+        ],
+        "query": "24h, 7d",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "InfluxDB-jenkins",
+          "value": "InfluxDB-jenkins"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "influxdb",
+        "refresh": 1,
+        "regex": "InfluxDB-jenkins",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "jcasc-cicd-stage311-tools-lcr.ocp-tools-b.iad.ca.inet",
+          "value": "jcasc-cicd-stage311-tools-lcr.ocp-tools-b.iad.ca.inet"
+        },
+        "datasource": "$datasource",
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Jenkins",
+        "multi": false,
+        "name": "jenkins_host",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"jenkins_data\" WITH KEY = \"jenkins_host\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "XPL Pipeline - Overview",
+  "uid": "zW8t-u1Mk",
+  "version": 47
+}
