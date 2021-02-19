@@ -4,7 +4,7 @@ Create the argocd apps-of-apps:
 
 ```
 argocd app create apps \
-  --repo https://github.com/spectrocloud/gitops-argocd.git \
+  --repo https://github.com/spectrocloud/gitops-jenkins.git \
   --path apps \
   --dest-name in-cluster \
   --dest-namespace argocd \
