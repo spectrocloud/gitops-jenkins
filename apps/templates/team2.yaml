@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jenkins-team2
+  name: team2
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "0"
